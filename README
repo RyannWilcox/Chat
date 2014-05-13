@@ -1,0 +1,7 @@
+This is a small instant messaging program I created as a side project.  This involves a server and client connecting and then sending messages to each other.  
+
+Its best if run from the command line.  The server must be run before starting the client.
+
+The commands for running these programs:
+-> java RunServer 
+-> java RunClient
