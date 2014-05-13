@@ -4,8 +4,8 @@ All messages sent between the client and server programs are encrypted using RSA
 
 Its best if run from the command line.  The server must be run before starting the client.   
 I removed my IP address for the server so before running you have
-to add what ever IP address you want tothe RunClient.java class.
-
+to add what ever IP address you want to the RunClient.java class.
+ 
 The commands for running these programs:
 -> java RunServer
 -> java RunClient
