@@ -1,5 +1,6 @@
 This is a small instant messaging program I created as a side project.  
-This involves a server and client connecting and then sending messages to each other.  
+This involves a server and client connecting and then sending messages to each other.  All messages sent between the
+client and server programs are encrypted using RSA.
 
 Its best if run from the command line.  The server must be run before starting the client.   
 I removed my IP address for the server so before running you have to add what ever IP addressyou want to
