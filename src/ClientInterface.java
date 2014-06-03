@@ -3,15 +3,18 @@ import javax.swing.border.*;
 import java.awt.*;
 import java.awt.event.*;
 
-public class ChatInterface extends JFrame{
+public class ClientInterface extends JFrame implements ActionListener{
 	private JTextArea inputArea = new JTextArea("Enter message here");	
 	private JTextArea outputArea = new JTextArea("Incoming messages go here");
 	private JPanel inputOutput = new JPanel(new GridLayout(2,1));
 	private JPanel buttons = new JPanel(new GridLayout(1,3));
 	private JScrollPane inputScroll = new JScrollPane(inputArea);
 	private JScrollPane outputScroll = new JScrollPane(outputArea);
+	private JButton quit = new JButton("Quit");
+	private JButton send = new JButton("Send");
+	private JButton connect = new JButton("Connect") ;  
 	
-	public ChatInterface(String title,int width,int height){
+	public ClientInterface(String title,int width,int height){
 		super("Chat");
 		setUpFrame(title,width,height);
 		setVisible(true);
@@ -46,19 +49,30 @@ public class ChatInterface extends JFrame{
 		inputOutput.add(inputScroll);
 		
 		/* Buttons to control chat*/
-		buttons.add(new JButton("Send"));
-		buttons.add(new JButton("Quit"));
-		buttons.add(new JButton("Connect"));
+		send.addActionListener(this);
+		quit.addActionListener(this);
+		connect.addActionListener(this);
+		buttons.add(send);
+		buttons.add(quit);
+		buttons.add(connect);
 		
 		add(buttons,BorderLayout.SOUTH);
 		add(inputOutput);
 		
 	}
 	
+	@Override
+	public void actionPerformed(ActionEvent e){
+		Object obj = e.getSource();
+		
+		if(obj == quit){
+			System.exit(0);
+		}
+	}
 	
 	
 	
 	public static void main(String[] args){
-		ChatInterface ci = new ChatInterface("Test",600,600);
+		ClientInterface ci = new ClientInterface("Test",600,600);
 	}
 }
